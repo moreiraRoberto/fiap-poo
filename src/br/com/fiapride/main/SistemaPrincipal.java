@@ -1,22 +1,10 @@
 package br.com.fiapride.main;
-
 import br.com.fiapride.model.GarrafaAgua;
-//import br.com.fiapride.model.Passageiro;
+
 
 public class SistemaPrincipal {
 
 	public static void main(String[] args) {		
-	 // Codigo Passageiro comentado =======
-     //   Passageiro passageiro1 = new Passageiro();
-		//   passageiro1.nome = "Lara Croft";
-		//   passageiro1.saldo = 50.0;        
-		//   Passageiro passageiro2 = new Passageiro();
-		//  passageiro2.nome = "Shania Twain";
-		//  passageiro2.saldo = 12.50;        
-     // Exibindo os dados no Console
-		// System.out.println("--- Sistema FiapRide ---");
-		//  System.out.println("Passageiro: " + passageiro1.nome + " | Saldo: R$" + passageiro1.saldo);
-		// System.out.println("Passageiro: " + passageiro2.nome + " | Saldo: R$" + passageiro2.saldo);
         
 		GarrafaAgua paravenda = new GarrafaAgua();
 		paravenda.cor = "Bege";
@@ -25,10 +13,24 @@ public class SistemaPrincipal {
 		GarrafaAgua parademonstracao = new GarrafaAgua();
 		parademonstracao.cor = "Preta";
 		parademonstracao.material = "Plástico com rotulo explicativo";
+		
+		GarrafaAgua garrafa1 = new GarrafaAgua("Lindoya","Plástico",500.0);
+		System.out.println("Garrafa 1 Cheia");
+		
+		
+		GarrafaAgua garrafa2 = new GarrafaAgua("Nestle","Vidro", 750.0);
+		System.out.println("Garrafa 2 Cheia");
+		
 	
 	System.out.println("--- Garrafa Água Reciclavél ---");
 	System.out.println("GarrafaAgua: " + paravenda.cor + " | "+ paravenda.material);
 	System.out.println("GarrafaAgua: " + parademonstracao.cor + " | "+ parademonstracao.material);
+	
+	System.out.println("---Sistema para Controle de Consumo de Água");
+    System.out.println("Marca: " + garrafa1.marca + " | Cap: " + garrafa1.capacidadegarrafa + "ml");
+    System.out.println("Marca: " + garrafa2.marca + " | Cap: " + garrafa2.capacidadegarrafa + "ml");
+	
+	
 	
 	}
 
