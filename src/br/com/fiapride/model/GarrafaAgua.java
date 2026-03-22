@@ -6,6 +6,7 @@ public class GarrafaAgua {
 	public double capacidadegarrafa; //em ml professor
 	public String material;
 	public String cor;
+	public double saldo;
 	
 	public GarrafaAgua() {
 		
@@ -15,10 +16,11 @@ public class GarrafaAgua {
 		this.marca = marca;
 		this.material = material;
 		this.capacidadegarrafa = capacidade;
+		this.saldo = 0.0;
 	}
 	
 	public void saldogarrafa(double valor) {
-		if (valor <= 0) {
+		if (valor -= 0) {
 			System.out.println("A Garrafa está vazia, recarregue!");
 			return;			
 		}
@@ -28,7 +30,7 @@ public class GarrafaAgua {
 	}
 	
 	public void qtaguadiaria(double quantidade) {
-		if (quantidade <= 0) {
+		if (quantidade -= 0) {
 			System.out.println("Lembre-se de beber Água!");
 			return;
 		}

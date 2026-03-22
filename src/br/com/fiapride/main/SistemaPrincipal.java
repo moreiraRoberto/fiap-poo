@@ -1,37 +1,46 @@
 package br.com.fiapride.main;
-import br.com.fiapride.model.GarrafaAgua;
+
+import br.com.fiapride.model.Passageiro;
 
 
 public class SistemaPrincipal {
 
 	public static void main(String[] args) {		
-        
-		GarrafaAgua paravenda = new GarrafaAgua();
-		paravenda.cor = "Bege";
-		paravenda.material = "Plástico Réciclavél";
-	
-		GarrafaAgua parademonstracao = new GarrafaAgua();
-		parademonstracao.cor = "Preta";
-		parademonstracao.material = "Plástico com rotulo explicativo";
+	//Criando o primeiro e segundo passageiro (objeto)
 		
-		GarrafaAgua garrafa1 = new GarrafaAgua("Lindoya","Plástico",500.0);
-		System.out.println("Garrafa 1 Cheia");
-		
-		
-		GarrafaAgua garrafa2 = new GarrafaAgua("Nestle","Vidro", 750.0);
-		System.out.println("Garrafa 2 Cheia");
-		
+       Passageiro passageiro1 = new Passageiro("Ana Silva", "222.222.222");
+       System.out.println("Regarga passageiro 1");
+       passageiro1.adicionarSaldo(50.0);
+       
+       Passageiro passageiro2 = new Passageiro("Lara Croft", "800.888.888");
+       System.out.println("Recarga passageiro 2");
+       passageiro2.adicionarSaldo(80.0);
 	
-	System.out.println("--- Garrafa Água Reciclavél ---");
-	System.out.println("GarrafaAgua: " + paravenda.cor + " | "+ paravenda.material);
-	System.out.println("GarrafaAgua: " + parademonstracao.cor + " | "+ parademonstracao.material);
-	
-	System.out.println("---Sistema para Controle de Consumo de Água");
-    System.out.println("Marca: " + garrafa1.marca + " | Cap: " + garrafa1.capacidadegarrafa + "ml");
-    System.out.println("Marca: " + garrafa2.marca + " | Cap: " + garrafa2.capacidadegarrafa + "ml");
-	
-	
-	
+	// Para exibir os dados
+       
+       System.out.println("--- Sistema FiapRide ---");
+       System.out.println("Passageiro: " + passageiro1.getNome() + " | Saldo: R$" + passageiro1.getSaldo() + " | CPF: " + passageiro1.getCpf());
+       System.out.println("Passageiro: " + passageiro2.getNome() + " | Saldo: R$" + passageiro2.getSaldo() + " | CPF: " + passageiro2.getCpf());
+       
+       System.out.println("Pagando viagem do passageiro 1");
+       passageiro1.pagarViagem(20);
+       System.out.println("Pagando viagem do passageiro 2");
+       passageiro2.pagarViagem(20);
+       
+       System.out.println("\n--- Status dos Passageiros ---");
+       System.out.println("Passageiro: " + passageiro1.getNome() + " | Saldo:R$ " + passageiro1.getSaldo() + " | CPF: " + passageiro1.getCpf());
+       System.out.println("Passageiro: " + passageiro2.getNome() + " | Saldo:R$ " + passageiro2.getSaldo() + " | CPF: " + passageiro2.getCpf());
+       
+       
+       System.out.println("\n--- Realizando Viagens ---");
+       System.out.println("Pagando viagem do passageiro 1 (Ana)...");
+       passageiro1.pagarViagem(20.0); // Ana tem 50, vai sobrar 30.
+       
+       System.out.println("\n Pagando viagem do passageiro 2 (Carlos)...");
+       passageiro2.pagarViagem(20.0);
 	}
 
-}
+}	
+       
+
+
