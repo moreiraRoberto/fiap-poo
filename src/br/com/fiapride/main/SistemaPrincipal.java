@@ -2,6 +2,7 @@ package br.com.fiapride.main;
 
 import br.com.fiapride.model.Passageiro;
 
+import br.com.fiapride.model.Veiculo;
 
 public class SistemaPrincipal {
 
@@ -15,6 +16,8 @@ public class SistemaPrincipal {
        Passageiro passageiro2 = new Passageiro("Lara Croft", "800.888.888");
        System.out.println("Recarga passageiro 2");
        passageiro2.adicionarSaldo(80.0);
+       
+       Veiculo meuCarro = new Veiculo("ABC-1234", "Toyota Corolla");
 	
 	// Para exibir os dados
        
@@ -38,9 +41,11 @@ public class SistemaPrincipal {
        
        System.out.println("\n Pagando viagem do passageiro 2 (Carlos)...");
        passageiro2.pagarViagem(20.0);
-	}
-
-}	
        
+       System.out.println("\n Veículo Cadastrado: " + meuCarro.gerarRelatorio());
+	}
+ }	
+
+
 
 
