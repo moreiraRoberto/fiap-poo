@@ -1,42 +1,52 @@
 package br.com.fiapride.model;
 
 public class GarrafaAgua {
-	
-	public String marca;
-	public double capacidadegarrafa; //em ml professor
-	public String material;
-	public String cor;
-	public double saldo;
-	
-	public GarrafaAgua() {
-		
-	}
+    
+    private String marca;
+    private double capacidadegarrafa; 
+    private String material;
+    private String cor;
+    private double saldo;
+    private double qtaguadiaria;
 
-	public GarrafaAgua(String marca, String material, double capacidade) {
-		this.marca = marca;
-		this.material = material;
-		this.capacidadegarrafa = capacidade;
-		this.saldo = 0.0;
-	}
-	
-	public void saldogarrafa(double valor) {
-		if (valor -= 0) {
-			System.out.println("A Garrafa está vazia, recarregue!");
-			return;			
-		}
-		
-		this.capacidadegarrafa += valor;
-		System.out.println("Água adicionada. Total: " + this.capacidadegarrafa + "ml");
-	}
-	
-	public void qtaguadiaria(double quantidade) {
-		if (quantidade -= 0) {
-			System.out.println("Lembre-se de beber Água!");
-			return;
-		}
-		
-		if (this.capacidadegarrafa < quantidade) {
-			System.out.pintln("Será necessário beber duas ou mais garrafas por dia");
-		}
-	}
+    public GarrafaAgua(String marca, String material, double capacidadegarrafa) {
+    	this.setMarca(marca);
+        this.setMaterial(material);
+        this.setCapacidadegarrafa(capacidadegarrafa);
+        this.setSaldo(0.0);
+    }
+
+    public GarrafaAgua() {
+    }
+
+    // Getters e Setters
+    public String getMarca() { return marca; }
+    public void setMarca(String marca) { this.marca = marca; }
+
+    public String getCor() { return cor; }
+    public void setCor(String cor) { this.cor = cor; }
+
+    public String getMaterial() { return material; }
+    public void setMaterial(String material) { this.material = material; }
+
+    public double getCapacidadegarrafa() { return capacidadegarrafa; }
+    public void setCapacidadegarrafa(double capacidadegarrafa) { this.capacidadegarrafa = capacidadegarrafa; }
+
+    public double getSaldo() { return saldo; }
+
+    public void setSaldo(double valor) {
+        if (valor <= 0) {
+            System.out.println("A Garrafa está vazia, recarregue!");
+        } else {
+            this.saldo = valor;
+        }
+    }
+
+    public void setQtaguadiaria(double quantidade) {
+        if (quantidade <= 0) {
+            System.out.println("Lembre-se de beber Água!");
+            return;
+        }
+        this.qtaguadiaria = quantidade;
+    }
 }
