@@ -1,6 +1,7 @@
 package br.com.fiapride.main;
 import br.com.fiapride.model.GarrafaAgua;
-
+import br.com.fiapride.model.GarrafaSqueeze;
+import br.com.fiapride.model.GarrafaTermica;
 
 public class SistemaPrincipalGarrafa {
 
@@ -29,7 +30,32 @@ public class SistemaPrincipalGarrafa {
     System.out.println("Marca: " + garrafa1.getMarca() + " | Cap: " + garrafa1.getCapacidadegarrafa() + "ml");
     System.out.println("Marca: " + garrafa2.getMarca() + " | Cap: " + garrafa2.getCapacidadegarrafa() + "ml");
 	
-	
+ // 1. Criando uma Garrafa comum
+    GarrafaAgua comum = new GarrafaAgua("Lindoya", "Plástico", 500.0);
+    
+    // 2. Criando a Garrafa Squeeze (Filha)
+    // Passamos Marca, Material, Capacidade E o Tipo de Bico
+    GarrafaSqueeze minhaSqueeze = new GarrafaSqueeze("Nike", "Tritan", 750.0, "Bico Flip");
+    minhaSqueeze.setCor("Rosa");
+
+    System.out.println("--- Teste de Herança de Garrafas ---");
+    
+    // Acesso aos atributos da mãe através da filha
+    System.out.println("Squeeze Marca: " + minhaSqueeze.getMarca()); 
+    System.out.println("Squeeze Material: " + minhaSqueeze.getMaterial());
+    
+    // Acesso ao atributo exclusivo da filha
+    System.out.println("Tipo de Bico: " + minhaSqueeze.getTipoBico());
+    
+ // Testando a segunda filha
+    GarrafaTermica garrafaStanley = new GarrafaTermica("Stanley", "Aço Inox", 473.0, 12);
+    garrafaStanley.setCor("Azul");
+
+    System.out.println("\n--- Teste de Garrafa Térmica ---");
+    System.out.println("Marca: " + garrafaStanley.getMarca());
+    System.out.println("Material: " + garrafaStanley.getMaterial());
+    // Chamando o método exclusivo da classe filha
+    garrafaStanley.exibirEficiencia();
 	
 	}
 
