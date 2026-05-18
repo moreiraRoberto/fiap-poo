@@ -1,4 +1,6 @@
 package br.com.fiapride.main;
+import br.com.fiapride.model.Carro;
+import br.com.fiapride.model.Vendavel;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.fiapride.model.GarrafaAgua;
@@ -77,6 +79,23 @@ public class SistemaPrincipalGarrafa {
         garrafa.exibirCategoria();
         System.out.println("---------------------------------------");
     }
+    
+ 	System.out.println("\n--- TESTE DA INTERFACE: Itens Vendáveis ---");
+ 	
+ 	// 1. Instanciamos um Carro (Hierarquia de Veículos)
+ 	Carro carroAnuncio = new Carro("XYZ-9999", "Chevrolet Onix", 4);
+ 	
+ 	// 2. Criamos um array do tipo da INTERFACE
+ 	// Este array aceita objetos de qualquer hierarquia, desde que implementem 'Vendavel'
+ 	Vendavel[] itensAVenda = new Vendavel[] { carroAnuncio, garrafaStanley };
+ 	
+ 	// 3. Chamada polimórfica do método do contrato
+ 	for (Vendavel item : itensAVenda) {
+ 	    item.exibirAnuncio();
+ 	    System.out.println("---------------------------------------");
+ 	}
+ 	for (GarrafaAgua garrafa : estoqueGarrafas) {
+ 	}
     
 }
 }

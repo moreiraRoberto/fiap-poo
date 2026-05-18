@@ -1,7 +1,7 @@
 package br.com.fiapride.model;
 
 // A palavra 'extends' faz a mágica da herança acontecer!
-public class Carro extends Veiculo {
+public class Carro extends Veiculo implements Vendavel {
     
     // Atributo exclusivo do Carro (a mãe Veiculo não tem isso)
     private int capacidadePassageiros;
@@ -36,5 +36,10 @@ public class Carro extends Veiculo {
     public String calcularAutonomia() {
     double kmRestante = this.getNivelCombustivel() * 10.0;
     return "Autonomia: " + kmRestante + " km (Consumo de 10 km/l).";
+    }
+    
+    @Override
+    public void exibirAnuncio() {
+        System.out.println("ANÚNCIO CLASSIFICADOS: Vende-se Carro " + this.getModelo() + " | Placa: " + this.getPlaca() + " - Excelente para trabalhar no FiapRide!");
     }
 }

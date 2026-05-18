@@ -1,7 +1,7 @@
 package br.com.fiapride.model;
 
 // Herança: GarrafaTermica é uma GarrafaAgua
-public class GarrafaTermica extends GarrafaAgua {
+public class GarrafaTermica extends GarrafaAgua implements Vendavel {
     
     // Atributo exclusivo: tempo que mantém a temperatura (em horas)
     private int horasConservacao;
@@ -36,5 +36,10 @@ public class GarrafaTermica extends GarrafaAgua {
     @Override
     public void exibirCategoria() {
         System.out.println("Categoria: Garrafa Térmica com Isolamento a Vácuo");
+    }
+    
+    @Override
+    public void exibirAnuncio() {
+        System.out.println("ANÚNCIO LOJA: Garrafa Térmica " + this.getMarca() + " (" + this.getMaterial() + ") - Conservação térmica de " + this.getHorasConservacao() + " horas por preço imperdível!");
     }
 }
