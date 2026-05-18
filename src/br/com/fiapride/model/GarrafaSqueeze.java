@@ -26,4 +26,9 @@ public class GarrafaSqueeze extends GarrafaAgua {
     public String obterRecomendacaoUso() {
         return "Recomendação Squeeze: Ideal para atividades esportivas e treinos. O bico do tipo '" + this.tipoBico + "' facilita o consumo rápido em movimento.";
     }
+    
+    @Override
+    public void exibirCategoria() {
+        System.out.println("Categoria: Squeeze Esportivo de Alta Performance");
+    }
 }

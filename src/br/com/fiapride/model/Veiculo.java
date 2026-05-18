@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Veiculo {
+public abstract class Veiculo {
 	
 	// atributos sempre privados
 	
@@ -26,6 +26,8 @@ public class Veiculo {
 	public String getModelo() {
 		return this.modelo;
 	}
+	
+	public abstract void exibirTipo();
 	
 	public void atualizarPlaca(String novaPlaca) {
 		System.out.println(" ⁠ ⁠ Solicitada atualização de placa no Detran para o veículo " + this.modelo + "...");

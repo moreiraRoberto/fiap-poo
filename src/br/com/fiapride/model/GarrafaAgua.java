@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class GarrafaAgua {
+public abstract class GarrafaAgua {
     
     private String marca;
     private double capacidadegarrafa; 
@@ -54,4 +54,6 @@ public class GarrafaAgua {
     public String obterRecomendacaoUso() {
         return "Recomendação Padrão: Garrafa ideal para consumo diário e armazenamento simples em temperatura ambiente.";
     }
+    
+    public abstract void exibirCategoria();
 }

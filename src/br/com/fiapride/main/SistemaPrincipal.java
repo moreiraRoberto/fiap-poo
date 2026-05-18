@@ -17,12 +17,12 @@ public class SistemaPrincipal {
         System.out.println("Recarga passageiro 2");
         passageiro2.adicionarSaldo(80.0);
         
-        Veiculo meuCarro = new Veiculo("ABC-1234", "Toyota Corolla");
+        Veiculo meuCarro = new Carro("ABC-1234", "Toyota Corolla", 4);
         
         System.out.println("--- FIAPRIDE: Inicializando Sistema ---");
         
         Passageiro ana = new Passageiro("Ana Silva", "222.222.222-22");
-        Veiculo carroDoJoao = new Veiculo("ABC-1234", "Toyota Corolla");
+        Veiculo carroDoJoao = new Carro("ABC-1234", "Toyota Corolla", 4);
         
         Viagem viagemDaAna = new Viagem("Avenida Paulista, 1000", ana, carroDoJoao);
         viagemDaAna.exibirResumo();
@@ -84,6 +84,7 @@ public class SistemaPrincipal {
             System.out.println(veiculo.calcularAutonomia());
             System.out.println("---------------------------------------");
         }
+        
         
     } 
 } 

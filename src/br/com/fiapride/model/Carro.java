@@ -15,7 +15,8 @@ public class Carro extends Veiculo {
         // E aqui o Carro resolve o que é dele:
         this.setCapacidadePassageiros(capacidadePassageiros);
     }
-    
+   
+   
  // Getters e Setters específicos do Carro
     public int getCapacidadePassageiros() {
         return this.capacidadePassageiros;
@@ -23,6 +24,11 @@ public class Carro extends Veiculo {
 
     private void setCapacidadePassageiros(int capacidadePassageiros) {
         this.capacidadePassageiros = capacidadePassageiros;
+    }
+    
+    @Override
+    public void exibirTipo() {
+    	System.out.println("Sou um Carro");
     }
     
     @Override

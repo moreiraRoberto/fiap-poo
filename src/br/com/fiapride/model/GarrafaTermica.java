@@ -33,4 +33,8 @@ public class GarrafaTermica extends GarrafaAgua {
     public String obterRecomendacaoUso() {
         return "Recomendação Térmica: Ideal para conservação de temperatura. Preserva a bebida por até " + this.getHorasConservacao() + " horas.";
     }
+    @Override
+    public void exibirCategoria() {
+        System.out.println("Categoria: Garrafa Térmica com Isolamento a Vácuo");
+    }
 }
