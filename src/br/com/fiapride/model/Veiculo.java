@@ -6,6 +6,7 @@ public class Veiculo {
 	
 	private String placa;
 	private String modelo;
+	private double nivelCombustivel;
 	
 	// Essa e a parte do cartorio, o construtor
 	
@@ -42,7 +43,24 @@ public class Veiculo {
 		public String gerarRelatorio() {
 			return "Veículo: " + this.modelo + " | Placa: " + this.placa;
 			}
-	}
+		
+		public String calcularAutonomia() {
+			return "Autonomia não definida para um veículo genérico.";
+			}
+			
+		public void abaster(int quantidade) {
+			this.setNivelCombustivel( this.getNivelCombustivel() + quantidade);
+			}
+			
+		public double getNivelCombustivel() {
+			return nivelCombustivel;
+			}
+			
+	private void setNivelCombustivel(double nivelCombustivel) {
+			this.nivelCombustivel = nivelCombustivel;
+			}
+			
+}
 		
 	
 

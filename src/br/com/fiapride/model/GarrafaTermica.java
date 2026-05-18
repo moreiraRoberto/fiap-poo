@@ -28,4 +28,9 @@ public class GarrafaTermica extends GarrafaAgua {
     public void exibirEficiencia() {
         System.out.println("Atenção: Este modelo mantém a temperatura por " + this.horasConservacao + " horas.");
     }
+    
+    @Override
+    public String obterRecomendacaoUso() {
+        return "Recomendação Térmica: Ideal para conservação de temperatura. Preserva a bebida por até " + this.getHorasConservacao() + " horas.";
+    }
 }

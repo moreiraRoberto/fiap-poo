@@ -1,4 +1,6 @@
 package br.com.fiapride.main;
+import java.util.ArrayList;
+import java.util.List;
 import br.com.fiapride.model.GarrafaAgua;
 import br.com.fiapride.model.GarrafaSqueeze;
 import br.com.fiapride.model.GarrafaTermica;
@@ -57,6 +59,25 @@ public class SistemaPrincipalGarrafa {
     // Chamando o método exclusivo da classe filha
     garrafaStanley.exibirEficiencia();
 	
-	}
-
+	System.out.println("\n--- TESTE POLIMÓRFICO: Recomendações de Uso ---");
+    
+    // A. Uma lista tipada com a Superclasse
+    List<GarrafaAgua> estoqueGarrafas = new ArrayList<>();
+    
+    // B. Os objetos específicos criados anteriormente à lista
+    estoqueGarrafas.add(comum);
+    estoqueGarrafas.add(minhaSqueeze);
+    estoqueGarrafas.add(garrafaStanley);
+    
+    // C. O laço de repetição que dispara o Polimorfismo
+    for (GarrafaAgua garrafa : estoqueGarrafas) {
+        System.out.println("Avaliando modelo da marca: " + garrafa.getMarca());
+        
+        // O mesmo comando gerará 3 respostas completamente diferentes no console
+        System.out.println(garrafa.obterRecomendacaoUso());
+        System.out.println("---------------------------------------");
+    }
+    
 }
+}
+

@@ -21,4 +21,9 @@ public class GarrafaSqueeze extends GarrafaAgua {
     public void setTipoBico(String tipoBico) {
         this.tipoBico = tipoBico;
     }
+    
+    @Override
+    public String obterRecomendacaoUso() {
+        return "Recomendação Squeeze: Ideal para atividades esportivas e treinos. O bico do tipo '" + this.tipoBico + "' facilita o consumo rápido em movimento.";
+    }
 }

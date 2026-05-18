@@ -49,4 +49,9 @@ public class GarrafaAgua {
         }
         this.qtaguadiaria = quantidade;
     }
+    
+ // Método genérico para o Polimorfismo
+    public String obterRecomendacaoUso() {
+        return "Recomendação Padrão: Garrafa ideal para consumo diário e armazenamento simples em temperatura ambiente.";
+    }
 }
