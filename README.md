@@ -37,7 +37,8 @@ Criei como meu objeto do mundo real uma GarrafaAgua, e meu objetivo inicial era 
 **Pergunta:** Por que precisamos criar uma classe `Passageiro`? Não seria mais fácil apenas criar variáveis soltas no main, como `String nomeAna = "Ana"` e `double saldoAna = 50.0`? Pense: E se o FiapRide tiver 1 milhão de usuários? Como a Classe ajuda a resolver isso?
 
 **Resposta:**
-Criar variáveis soltas não possui escalabilidade arquitetural. Uma classe atua como uma planta (molde) que encapsula dados e comportamentos pertencentes à mesma entidade. Em um cenário com milhões de usuários, a classe garante que todo objeto `Passageiro` instanciado na memória possua rigorosamente a mesma estrutura. Isso permite a criação de listas e o gerenciamento organizado do estado da aplicação, eliminando a redundância e a desorganização de gerenciar milhões de variáveis primitivas e desconexas no escopo global.
+Criar variáveis soltas pode deixar o código confuso e não limpo. Para garantir que tenha a mesma estrutura, devemos criar uma classe, neste caso'Passageiro' que vai acabar encapsulando os dados e moldando. 
+Isso vai garantir todo objeto `Passageiro` instanciado na memória possua rigorosamente a mesma estrutura. Isso permite a criação de listas e o gerenciamento organizado do estado da aplicação, eliminando a redundância e a desorganização de gerenciar milhões de variáveis primitivas e desconexas no escopo global.
 
 ---
 
@@ -45,7 +46,7 @@ Criar variáveis soltas não possui escalabilidade arquitetural. Uma classe atua
 **Pergunta:** Se nós podemos simplesmente fazer `passageiro.saldo = passageiro.saldo + 100` diretamente no código principal, por que dá tanto trabalho criar um método específico chamado `adicionarSaldo(valor)` para fazer isso? Quais seriam os riscos para a nossa startup de mobilidade se deixássemos qualquer programador alterar o saldo diretamente?
 
 **Resposta:**
-Alterar atributos diretamente anula a integridade dos dados e o controle transacional. O método `adicionarSaldo(valor)` atua como um guardião do estado do objeto. Se o saldo fosse público, qualquer desenvolvedor poderia injetar lógicas arbitrárias ou valores inválidos (como saldos negativos) em qualquer parte do sistema. Ao centralizar a operação em um método, a classe detém o controle total da regra de negócio, permitindo validar entradas, aplicar taxas e garantir a consistência financeira da aplicação de forma padronizada.
+Alterar atributos diretamente anula a integridade dos dados. O método `adicionarSaldo(valor)` atua como um guardião do estado do objeto. Se o saldo fosse público, qualquer pessoa poderia alterar/incluir valores até com saldos negativos. E eu aprendi na pele porque foi um dos pontos que errei na CP01 e me fez prestar atenção neste momento.   
 
 ---
 
@@ -53,7 +54,8 @@ Alterar atributos diretamente anula a integridade dos dados e o controle transac
 **Pergunta:** No nosso código, os atributos são `private`, mas os métodos `getSaldo()` e `getNome()` são `public`. Por que é seguro deixar o `get` público, mas perigoso deixar o atributo original público? Pense bem: Qual a diferença entre dar a alguém uma CÓPIA de um documento seu, e entregar o documento ORIGINAL para a pessoa rasurar?
 
 **Resposta:**
-O método `get` aplica o princípio do Ocultamento de Informação. Ele concede acesso de leitura (retornando uma cópia do valor), mas bloqueia a alteração de estado. Expor o atributo original permitiria a reatribuição irrestrita do ponteiro na memória (escrita não validada). É a diferença entre permitir que o sistema consulte uma informação de forma segura e abrir brechas para que o estado interno do objeto seja corrompido ou sobrescrito sem validação.
+O método `get` aplica o princípio do Ocultamento de Informação. Ele concede acesso de leitura (retornando uma cópia do valor), mas bloqueia a alteração de estado. 
+É a diferença entre permitir que o sistema consulte uma informação de forma segura e abrir brechas para que o estado interno do objeto seja corrompido ou sobrescrito sem validação.
 
 ---
 
@@ -61,7 +63,7 @@ O método `get` aplica o princípio do Ocultamento de Informação. Ele concede 
 **Pergunta:** Na nossa classe `Veiculo`, nós tomamos duas decisões arquitetônicas muito importantes: 1) Nós não criamos o método `setModelo()`. 2) O `setPlaca()` foi criado como privado, e criamos um método público chamado `atualizarPlaca()` para acessá-lo. Pensando no mundo real e no Clean Code: Por que é um erro gravíssimo clicar em 'Gerar Getters e Setters para tudo' automaticamente na sua IDE? Como as nossas duas decisões acima protegem o sistema de fraudes e falhas de lógica?
 
 **Resposta:**
-Gerar "Setters" irrestritamente fere a imutabilidade de atributos que definem a identidade de um objeto. O `setModelo()` foi omitido porque, fisicamente, um veículo não muda de modelo após fabricado. Quanto à placa, torná-la privada impede alterações diretas no banco de dados da aplicação. O método `atualizarPlaca()` obriga a execução de um processo sistêmico (como simular um trâmite no Detran ou disparar logs de auditoria), impedindo *bypasses* lógicos e protegendo o sistema contra fraudes.
+Gerar "Setters" irrestritamente fere a imutabilidade de atributos que definem a identidade de um objeto. O `setModelo()` foi omitido porque, fisicamente, um veículo não muda de modelo após fabricado. Quanto à placa, torná-la privada impede alterações diretas no banco de dados da aplicação. O método `atualizarPlaca()` obriga a execução de um processo sistêmico (como simular um trâmite no Detran ou disparar logs de auditoria), impedindo e protegendo o sistema contra fraudes.
 
 ---
 
