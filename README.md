@@ -121,3 +121,8 @@ As interfaces resolvem esse conflito porque elas transmitem apenas a "assinatura
 Sistema para Controle de Consumo de Água e Gestão de Utilitários de Consumo. Foi desenvolvida uma hierarquia orientada a objetos (Classe mãe abstrata `GarrafaAgua` com filhas concretas `GarrafaSqueeze` e `GarrafaTermica`), demonstrando herança, polimorfismo, sobrescrita de métodos abstratos baseados na utilidade física dos recipientes, e implementação de uma interface transversal de negócios (`Vendavel`).
 
 O momento mais desafiador foi criar na aula 9 uma interface que conecta-se os projetos, por isso criei a interface vendável porque no meu raciocínio Carro e GarrafaTermica compartilham uma característica comercial no mundo real: ambos são bens de consumo e podem ser anunciados para venda.
+
+**DIAGRAMA FINAL**
+
+
+<img width="1678" height="1845" alt="Class Diagram0" src="https://github.com/user-attachments/assets/41a42636-5814-4c9c-b764-7dd058189562" />
